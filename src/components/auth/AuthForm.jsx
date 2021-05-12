@@ -80,6 +80,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
           name="username"
           placeholder="아이디"
           onChange={onChange}
+          value={form.username}
         />
         <StyledInput
           autoComplete="new-password"
@@ -87,6 +88,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
           placeholder="비밀번호"
           type="password"
           onChange={onChange}
+          value={form.password}
         />
         {type === 'register' && (
           <StyledInput
@@ -100,7 +102,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}
         <ButtonWithMarginTop cyan fullWidth>
-          로그인
+          {text}
         </ButtonWithMarginTop>
       </form>
       <Footer>
