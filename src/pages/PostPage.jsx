@@ -1,7 +1,14 @@
 import React from 'react';
+import HeaderContainer from '../container/common/HeaderContainer';
+import PostViewerContainer from '../container/post/PostViewContainer';
 
-const PostPage = (props) => {
-  return <div>글 읽기</div>;
+const PostPage = () => {
+  return (
+    <>
+      <HeaderContainer />
+      <PostViewerContainer />
+    </>
+  );
 };
 
 export default PostPage;
