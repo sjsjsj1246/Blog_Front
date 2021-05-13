@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 
-const EditorBlock = styled(Responsive)`
+const EditorWrapper = styled(Responsive)`
   padding: 5rem 0;
 `;
 const TitleInput = styled.input`
@@ -65,7 +65,7 @@ const Editor = ({ title, body, onChangeField }) => {
   };
 
   return (
-    <EditorBlock>
+    <EditorWrapper>
       <TitleInput
         placeholder="제목을 입력하세요"
         onChange={onChangeTitle}
@@ -74,7 +74,7 @@ const Editor = ({ title, body, onChangeField }) => {
       <QuillWrapper>
         <div ref={quillElement} />
       </QuillWrapper>
-    </EditorBlock>
+    </EditorWrapper>
   );
 };
 
