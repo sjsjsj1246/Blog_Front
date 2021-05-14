@@ -29,36 +29,7 @@ const PostContent = styled.div`
   color: ${palette.gray[8]};
 `;
 
-const TagsWrapper = styled.div`
-  margin-top: 0.5rem;
-  .tag {
-    display: inline-block;
-    color: ${palette.cyan[7]};
-    text-decoration: none;
-    margin-right: 0.5rem;
-    &:hover {
-      color: ${palette.cyan[6]};
-    }
-  }
-`;
-
-const SubInfoWrapper = styled.div`
-  ${(props) =>
-    props.hasMarginTop &&
-    css`
-      margin-top: 1rem;
-    `}
-  color: ${palette.gray[6]};
-  /* span 사이에 가운뎃점 문자 보여주기*/
-  span + span:before {
-    color: ${palette.gray[4]};
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    content: '\\B7'; /* 가운뎃점 문자 */
-  }
-`;
-
-const PostViewer = ({ post, error, loading }) => {
+const PostViewer = ({ post, error, loading, actionButtons }) => {
   if (error) {
     if (error.response && error.reponse.status === 404) {
       return <PostViewerWrapper>존재하지 않는 포스트입니다.</PostViewerWrapper>;
@@ -83,6 +54,7 @@ const PostViewer = ({ post, error, loading }) => {
         />
         <Tags tags={tags} />
       </PostHead>
+      {actionButtons}
       <PostContent dangerouslySetInnerHTML={{ __html: body }} />
     </PostViewerWrapper>
   );
