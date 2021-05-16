@@ -4,6 +4,7 @@ import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 import SubInfo from '../common/SubInfo';
 import Tags from '../common/Tags';
+import { Helmet } from 'react-helmet-async';
 
 /**
  * 포스트 읽기를 담당하는 컴포넌트입니다.
@@ -45,6 +46,9 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
 
   return (
     <PostViewerWrapper>
+      <Helmet>
+        <title>{title} - BLOGROUP</title>
+      </Helmet>
       <PostHead>
         <h1>{title}</h1>
         <SubInfo

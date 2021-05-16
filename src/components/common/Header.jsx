@@ -48,7 +48,7 @@ const Header = ({ user, onLogout }) => {
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo">
-            REACTERS
+            BLOGROUP
           </Link>
           {user ? (
             <div className="right">
